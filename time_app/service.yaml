@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2026-02-08T22:43:50Z"
+  labels:
+    app: sample-time-app
+  name: sample-time-app
+  namespace: default
+  resourceVersion: "563"
+  uid: 1e083232-6913-4a9a-8cf1-4a70d0cc240d
+spec:
+  clusterIP: 10.97.118.77
+  clusterIPs:
+  - 10.97.118.77
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 30885
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: sample-time-app
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
